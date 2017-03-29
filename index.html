@@ -300,19 +300,21 @@
 <hr style="margin-top:-10px; margin-bottom:13px">
 <font face="helvetica" style="font-size:18px">
 <p align="justify">
-    Knowledge representation encodes enormous structured information with entities and relations into a continuous low-dimensional semantic space. Most conventional methods solely focus on learning knowledge representation
-    from single modality, yet neglects the complemental information from others. This paper proposes a novel multi-modal knowledge representation learning (MM-KRL) framework which is the frst attempt to handle knowledge from
-    both textural and visual modal web data. It consists of two stages, i.e., webly-supervised multi-modal relationship mining, and bienhanced cross-modal knowledge representation learning.
+    Knowledge representation encodes enormous structured information with entities and relations into a continuous low-dimensional semantic space. Most conventional methods solely focus on learning
+    knowledge representation from single modality, yet neglects the complemental information from others. This paper proposes a novel multi-modal knowledge representation learning (MM-KRL) framework
+    which is the first attempt to handle knowledge from both textural and visual modal web data. It consists of two stages, i.e., webly-supervised multi-modal relationship mining, and bi-enhanced
+    cross-modal knowledge representation learning.
 </p>
 
  <p>
  <b>Compared with existing knowledge representation methods, our framework has several advantages:</b>
 </p>
     <ol style="margin-top:-7px">
-    <li>It can eﬀectively mine multi-modal knowledge with structured textural and visual relationships from web automatically.</li>
+    <li>It can eectively mine multi-modal knowledge with structured textural and visual relationships from web automatically.</li>
     <li>It is able to learn a common knowledge space which is independent to both task and modality by the proposed Bi-enhanced Cross-modal Deep Neural Network (BC-DNN).</li>
-    <li>It could represent unseen multi-modal relationships by transferring the learned knowledge with seen isolated entities and relations into unseen relationships. Experimental results show that the proposed MM-KRL
-systematic framework achieves superior performance both in zero-shot multi-modal retrieval and visual relationship recognition.</li>
+    <li>It could represent unseen multi-modal relationships by transferring the learned knowledge with seen isolated entities and relations into unseen relationships.
+        We build a large-scale multi-modal relationship dataset (MMR-D) and the experimental results show that our framework achieves superior performance in zero-shot multi-modal retrieval
+        and visual relationship recognition.</li>
     </ol>
 
 </font>
@@ -348,13 +350,13 @@ The input is an image and the output is a set of bounding box pairs, each locali
     <font face="helvetica" style="font-size:15px">
 <center>
     <img src="./MultimodalKnowledge/comparison.png" height="300">
-    <br>Illustration the difference of conventional text KRL, visual KRL and the proposed MM-KRL.
+    <br>Illustration the difference of conventional textual KRL, visual KRL and the proposed MM-KRL.
 </center>
 </font>
     <br>
     <ol style="margin-top:-7px">
-        <li><b>text KRL</b>: text knowledge representation learning.</li>
-        <li><b>visual KRL</b>: visual knowledge representation learning.</li>
+        <li><b>Textual KRL</b>: textual knowledge representation learning.</li>
+        <li><b>Visual KRL</b>: visual knowledge representation learning.</li>
         <li><b>MM-KRL</b>: multi-modal knowledge representation learning.</li>
     </ol>
 
@@ -365,11 +367,18 @@ The input is an image and the output is a set of bounding box pairs, each locali
 <hr style="margin-top:-10px; margin-bottom:13px">
 <font face="helvetica" style="font-size:15px">
     <center>
-    <img src="./MultimodalKnowledge/framework.png" height="300">
-        Proposed framework for multi-modal knowledge learning
-        </center>
+    <img src="./MultimodalKnowledge/framework.png" height="350">
+        Proposed framework for multi-modal knowledge learning.
+    </center>
+<br>
 </font>
-
+    <font face="helvetica" style="font-size:15px">
+        <center>
+            <img src="./MultimodalKnowledge/crosslearning.png" height="450">
+            <br>
+            Bi-enhanced cross-modal knowledge representation.
+        </center>
+    </font>
 <p style="padding-bottom:1px"></p>
 
 
@@ -444,7 +453,7 @@ The input is an image and the output is a set of bounding box pairs, each locali
 </a>
 <div style="margin-left: 10px; display: inline-block;">
 <a href="http://napoli18.eecs.umich.edu/public_html/data/hico_20150920.tar.gz">Training data</a> 7.5GB<br>
-Images and annotations for the HOI classification task.
+    Training data includes 597299 instances.
 </div>
 </div>
 
@@ -455,8 +464,8 @@ Images and annotations for the HOI classification task.
 <img src="./MultimodalKnowledge/download_button.jpg" height="30px">
 </a>
 <div style="margin-left: 10px; display: inline-block;"> 
-<a href="http://napoli18.eecs.umich.edu/public_html/data/hico_20160224_det.tar.gz">Test data</a> 7.5GB<br>
-Images and annotations for the HOI detection task.
+<a href="http://napoli18.eecs.umich.edu/public_html/data/hico_20160224_det.tar.gz">Test data</a> 17.6GB<br>
+Test data includes 90690 instances.
 </div>
 </div>
 
@@ -472,13 +481,13 @@ Images and annotations for the HOI detection task.
     <br>
     <table border="1" align="center">
         <tr>
-            <th align="center" bgcolor=#F0F0F0>&nbsp;#Images&nbsp;</th>
-            <th align="center" bgcolor=#F0F0F0>&nbsp;#Multi-modal relationship types&nbsp;<br></th>
-            <th align="center" bgcolor=#F0F0F0>&nbsp;#Multi-modal relationship instances&nbsp;<br></th>
+            <th align="center" bgcolor=#F0F0F0>&nbsp;#Multi-modal relationships&nbsp;</th>
+            <th align="center" bgcolor=#F0F0F0>&nbsp;#Textual relationship instances&nbsp;<br></th>
+            <th align="center" bgcolor=#F0F0F0>&nbsp;#Visual relationship instances&nbsp;<br></th>
 
         </tr>
         <tr>
-            <td align="center">&nbsp;687784</td>
+            <td align="center">&nbsp;20726</td>
             <td align="center">&nbsp;20726</td>
             <td align="center">&nbsp;687784</td>
 
@@ -554,7 +563,7 @@ Source code for textual knowledge representation learning based on Triplet Relat
         </a>
         <div style="margin-left: 10px; display: inline-block;">
             <a href="./MultimodalKnowledge/test_text_result.zip">Text-Text Retrieval</a> 910 KB<br>
-            Images and annotations for the HOI detection task.
+            Results of zero-shot text-text retrieval.
         </div>
     </div>
 
@@ -565,7 +574,7 @@ Source code for textual knowledge representation learning based on Triplet Relat
         </a>
         <div style="margin-left: 10px; display: inline-block;">
             <a href="./MultimodalKnowledge/test_visual_result.zip">Image-Image Retrieval</a> 3.10 MB<br>
-            Images and annotations for the HOI detection task.
+            Results of zero-shot image-image retrieval.
         </div>
     </div>
 
@@ -576,13 +585,13 @@ Source code for textual knowledge representation learning based on Triplet Relat
         </a>
         <div style="margin-left: 10px; display: inline-block;">
             <a href="./MultimodalKnowledge/test_crossmodalresult.zip">Text-Image Retrieval</a> 2.93 MB<br>
-            Images and annotations for the HOI detection task.
+            Results of zero-shot text-image cross modal retrieval.
         </div>
     </div>
 <p style="padding-bottom:1px"></p>
 
 <hr>
-<font face="helvetica" style="font-size:15px">Last updated on 2017/03/05</font>
+<font face="helvetica" style="font-size:15px">Last updated on 2017/03/29</font>
 </td>
 </tr>
 
