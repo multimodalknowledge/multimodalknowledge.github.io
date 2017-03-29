@@ -1,0 +1,35 @@
+
+/*----------------------------
+	Content area
+-----------------------------*/
+
+
+#container{
+	display:block;
+	overflow:hidden;
+	width: 830px;
+	margin:0 auto;
+}
+
+#container li{
+
+	float: left;
+	height: 96px;
+	list-style: none outside none;
+	margin: 6px;
+	position: relative;
+	width: 125px;
+
+	-moz-box-shadow: 0 0 5px #000;
+	-webkit-box-shadow: 0 0 5px #000;
+	box-shadow: 0 0 5px #000;
+}
+
+#container ul{
+	overflow:hidden;
+}
+
+#container ul.hidden{
+	display:none;
+}
+

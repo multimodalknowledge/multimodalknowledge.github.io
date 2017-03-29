@@ -1,0 +1,591 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0043)http://www-personal.umich.edu/~ywchao/hico/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Multi-Modal Knowledge Representation Learning</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+
+<script>
+    function selectImages() {
+        <!---- 判断第一个实体是什么-->
+        var headentityIndex = 0;
+        var relationshipIndex = 0;
+        var tailentityIndex = 0;
+
+        if(document.getElementById("1_1").checked)
+        {
+            headentityIndex = 1;
+        }
+        if(document.getElementById("1_2").checked)
+        {
+            headentityIndex = 2;
+        }
+        if(document.getElementById("1_3").checked)
+        {
+            headentityIndex = 3;
+        }
+        if(document.getElementById("1_4").checked)
+        {
+            headentityIndex = 4;
+        }
+
+        <!---- 判断关系是什么-->
+        if(document.getElementById("2_1").checked)
+        {
+            relationshipIndex = 1;
+        }
+        if(document.getElementById("2_2").checked)
+        {
+            relationshipIndex = 2;
+        }
+
+        if(document.getElementById("3_1").checked)
+        {
+            tailentityIndex = 1;
+        }
+        if(document.getElementById("3_2").checked)
+        {
+            tailentityIndex = 2;
+        }
+        if(document.getElementById("3_3").checked)
+        {
+            tailentityIndex = 3;
+        }
+        if(document.getElementById("3_4").checked)
+        {
+            tailentityIndex = 4;
+        }
+        if(document.getElementById("3_5").checked)
+        {
+            tailentityIndex = 5;
+        }
+
+        <!---- 根据选中的关系去数据库中查找图片-->
+        if(headentityIndex == 1 && relationshipIndex == 1 && tailentityIndex == 1)
+        {
+            document.getElementById("img_1").src = "assets/img/1/1.jpg"
+            document.getElementById("img_2").src = "assets/img/1/4.jpg"
+            document.getElementById("img_3").src = "assets/img/1/6.jpg"
+            document.getElementById("img_4").src = "assets/img/1/7.jpg"
+            document.getElementById("img_5").src = "assets/img/1/10.jpg"
+            document.getElementById("img_6").src = "assets/img/1/11.jpg"
+            document.getElementById("img_7").src = "assets/img/1/13.jpg"
+            document.getElementById("img_8").src = "assets/img/1/17.jpg"
+            document.getElementById("img_9").src = "assets/img/1/20.jpg"
+            document.getElementById("img_10").src = "assets/img/1/23.jpg"
+            document.getElementById("img_11").src = "assets/img/1/24.jpg"
+            document.getElementById("img_12").src = "assets/img/1/25.jpg"
+            document.getElementById("img_13").src = "assets/img/1/27.jpg"
+            document.getElementById("img_14").src = "assets/img/1/28.jpg"
+            document.getElementById("img_15").src = "assets/img/1/30.jpg"
+        }
+        else
+        {
+            if(headentityIndex == 2 && relationshipIndex == 1 && tailentityIndex == 1)
+            {
+                document.getElementById("img_1").src = "assets/img/2/1.jpg"
+                document.getElementById("img_2").src = "assets/img/2/2.jpg"
+                document.getElementById("img_3").src = "assets/img/2/7.jpg"
+                document.getElementById("img_4").src = "assets/img/2/8.jpg"
+                document.getElementById("img_5").src = "assets/img/2/9.jpg"
+                document.getElementById("img_6").src = "assets/img/2/10.jpg"
+                document.getElementById("img_7").src = "assets/img/2/11.jpg"
+                document.getElementById("img_8").src = "assets/img/2/12.jpg"
+                document.getElementById("img_9").src = "assets/img/2/17.jpg"
+                document.getElementById("img_10").src = "assets/img/2/18.jpg"
+                document.getElementById("img_11").src = "assets/img/2/20.jpg"
+                document.getElementById("img_12").src = "assets/img/2/24.jpg"
+                document.getElementById("img_13").src = "assets/img/2/26.jpg"
+                document.getElementById("img_14").src = "assets/img/2/29.jpg"
+                document.getElementById("img_15").src = "assets/img/2/53.jpg"
+            }
+            else
+            {
+                if(headentityIndex == 1 && relationshipIndex == 2 && tailentityIndex == 2)
+                {
+                    document.getElementById("img_1").src = "assets/img/3/2.jpg"
+                    document.getElementById("img_2").src = "assets/img/3/3.jpg"
+                    document.getElementById("img_3").src = "assets/img/3/5.jpg"
+                    document.getElementById("img_4").src = "assets/img/3/6.jpg"
+                    document.getElementById("img_5").src = "assets/img/3/7.jpg"
+                    document.getElementById("img_6").src = "assets/img/3/9.jpg"
+                    document.getElementById("img_7").src = "assets/img/3/10.jpg"
+                    document.getElementById("img_8").src = "assets/img/3/11.jpg"
+                    document.getElementById("img_9").src = "assets/img/3/13.jpg"
+                    document.getElementById("img_10").src = "assets/img/3/14.jpg"
+                    document.getElementById("img_11").src = "assets/img/3/15.jpg"
+                    document.getElementById("img_12").src = "assets/img/3/16.jpg"
+                    document.getElementById("img_13").src = "assets/img/3/17.jpg"
+                    document.getElementById("img_14").src = "assets/img/3/18.jpg"
+                    document.getElementById("img_15").src = "assets/img/3/19.jpg"
+                }
+                else
+                {
+                    if(headentityIndex == 2 && relationshipIndex == 2 && tailentityIndex == 3)
+                    {
+                        document.getElementById("img_1").src = "assets/img/4/5.jpg"
+                        document.getElementById("img_2").src = "assets/img/4/7.jpg"
+                        document.getElementById("img_3").src = "assets/img/4/11.jpg"
+                        document.getElementById("img_4").src = "assets/img/4/13.jpg"
+                        document.getElementById("img_5").src = "assets/img/4/14.jpg"
+                        document.getElementById("img_6").src = "assets/img/4/18.jpg"
+                        document.getElementById("img_7").src = "assets/img/4/19.jpg"
+                        document.getElementById("img_8").src = "assets/img/4/20.jpg"
+                        document.getElementById("img_9").src = "assets/img/4/22.jpg"
+                        document.getElementById("img_10").src = "assets/img/4/23.jpg"
+                        document.getElementById("img_11").src = "assets/img/4/24.jpg"
+                        document.getElementById("img_12").src = "assets/img/4/28.jpg"
+                        document.getElementById("img_13").src = "assets/img/4/30.jpg"
+                        document.getElementById("img_14").src = "assets/img/4/31.jpg"
+                        document.getElementById("img_15").src = "assets/img/4/40.jpg"
+                    }
+                    else
+                    {
+                        if(headentityIndex == 3 && relationshipIndex == 2 && tailentityIndex == 4)
+                        {
+                            document.getElementById("img_1").src = "assets/img/5/5.jpg"
+                            document.getElementById("img_2").src = "assets/img/5/6.jpg"
+                            document.getElementById("img_3").src = "assets/img/5/7.jpg"
+                            document.getElementById("img_4").src = "assets/img/5/9.jpg"
+                            document.getElementById("img_5").src = "assets/img/5/12.jpg"
+                            document.getElementById("img_6").src = "assets/img/5/13.jpg"
+                            document.getElementById("img_7").src = "assets/img/5/16.jpg"
+                            document.getElementById("img_8").src = "assets/img/5/23.jpg"
+                            document.getElementById("img_9").src = "assets/img/5/24.jpg"
+                            document.getElementById("img_10").src = "assets/img/5/40.jpg"
+                            document.getElementById("img_11").src = "assets/img/5/43.jpg"
+                            document.getElementById("img_12").src = "assets/img/5/26.jpg"
+                            document.getElementById("img_13").src = "assets/img/5/27.jpg"
+                            document.getElementById("img_14").src = "assets/img/5/30.jpg"
+                            document.getElementById("img_15").src = "assets/img/5/37.jpg"
+                        }
+                        else
+                        {
+                            if(headentityIndex == 4 && relationshipIndex == 2 && tailentityIndex == 5)
+                            {
+                                document.getElementById("img_1").src = "assets/img/6/1.jpg"
+                                document.getElementById("img_2").src = "assets/img/6/2.jpg"
+                                document.getElementById("img_3").src = "assets/img/6/3.jpg"
+                                document.getElementById("img_4").src = "assets/img/6/4.jpg"
+                                document.getElementById("img_5").src = "assets/img/6/6.jpg"
+                                document.getElementById("img_6").src = "assets/img/6/8.jpg"
+                                document.getElementById("img_7").src = "assets/img/6/9.jpg"
+                                document.getElementById("img_8").src = "assets/img/6/11.jpg"
+                                document.getElementById("img_9").src = "assets/img/6/13.jpg"
+                                document.getElementById("img_10").src = "assets/img/6/14.jpg"
+                                document.getElementById("img_11").src = "assets/img/6/16.jpg"
+                                document.getElementById("img_12").src = "assets/img/6/18.jpg"
+                                document.getElementById("img_13").src = "assets/img/6/19.jpg"
+                                document.getElementById("img_14").src = "assets/img/6/28.jpg"
+                                document.getElementById("img_15").src = "assets/img/6/29.jpg"
+                            }
+                            else
+                            {
+                                if(headentityIndex == 1 && relationshipIndex == 2 && tailentityIndex == 3)
+                                {
+                                    document.getElementById("img_1").src = "assets/img/7/1.jpg"
+                                    document.getElementById("img_2").src = "assets/img/7/2.jpg"
+                                    document.getElementById("img_3").src = "assets/img/7/3.jpg"
+                                    document.getElementById("img_4").src = "assets/img/7/4.jpg"
+                                    document.getElementById("img_5").src = "assets/img/7/5.jpg"
+                                    document.getElementById("img_6").src = "assets/img/7/6.jpg"
+                                    document.getElementById("img_7").src = "assets/img/7/7.jpg"
+                                    document.getElementById("img_8").src = "assets/img/7/8.jpg"
+                                    document.getElementById("img_9").src = "assets/img/7/9.jpg"
+                                    document.getElementById("img_10").src = "assets/img/7/10.jpg"
+                                    document.getElementById("img_11").src = "assets/img/7/11.jpg"
+                                    document.getElementById("img_12").src = "assets/img/7/12.jpg"
+                                    document.getElementById("img_13").src = "assets/img/7/13.jpg"
+                                    document.getElementById("img_14").src = "assets/img/7/14.jpg"
+                                    document.getElementById("img_15").src = "assets/img/7/15.jpg"
+                                }
+                                else
+                                {
+                                    if(headentityIndex == 1 && relationshipIndex == 2 && tailentityIndex == 4)
+                                    {
+                                        document.getElementById("img_1").src = "assets/img/8/1.jpg"
+                                        document.getElementById("img_2").src = "assets/img/8/2.jpg"
+                                        document.getElementById("img_3").src = "assets/img/8/3.jpg"
+                                        document.getElementById("img_4").src = "assets/img/8/4.jpg"
+                                        document.getElementById("img_5").src = "assets/img/8/5.jpg"
+                                        document.getElementById("img_6").src = "assets/img/8/6.jpg"
+                                        document.getElementById("img_7").src = "assets/img/8/7.jpg"
+                                        document.getElementById("img_8").src = "assets/img/8/8.jpg"
+                                        document.getElementById("img_9").src = "assets/img/8/9.jpg"
+                                        document.getElementById("img_10").src = "assets/img/8/10.jpg"
+                                        document.getElementById("img_11").src = "assets/img/8/11.jpg"
+                                        document.getElementById("img_12").src = "assets/img/8/12.jpg"
+                                        document.getElementById("img_13").src = "assets/img/8/13.jpg"
+                                        document.getElementById("img_14").src = "assets/img/8/14.jpg"
+                                        document.getElementById("img_15").src = "assets/img/8/15.jpg"
+                                    }
+                                    else
+                                    {
+                                        if(headentityIndex == 2 && relationshipIndex == 2 && tailentityIndex == 4)
+                                        {
+                                            document.getElementById("img_1").src = "assets/img/9/1.jpg"
+                                            document.getElementById("img_2").src = "assets/img/9/2.jpg"
+                                            document.getElementById("img_3").src = "assets/img/9/3.jpg"
+                                            document.getElementById("img_4").src = "assets/img/9/4.jpg"
+                                            document.getElementById("img_5").src = "assets/img/9/5.jpg"
+                                            document.getElementById("img_6").src = "assets/img/9/6.jpg"
+                                            document.getElementById("img_7").src = "assets/img/9/7.jpg"
+                                            document.getElementById("img_8").src = "assets/img/9/8.jpg"
+                                            document.getElementById("img_9").src = "assets/img/9/9.jpg"
+                                            document.getElementById("img_10").src = "assets/img/9/10.jpg"
+                                            document.getElementById("img_11").src = "assets/img/9/11.jpg"
+                                            document.getElementById("img_12").src = "assets/img/9/12.jpg"
+                                            document.getElementById("img_13").src = "assets/img/9/13.jpg"
+                                            document.getElementById("img_14").src = "assets/img/9/14.jpg"
+                                            document.getElementById("img_15").src = "assets/img/9/15.jpg"
+                                        }
+                                        else
+                                        {
+                                            alert("Illegal Relationship!");
+                                            document.getElementById("1_1").checked = true;
+                                            document.getElementById("2_1").checked = true;
+                                            document.getElementById("3_1").checked = true;
+
+                                            headentityIndex = 1;
+                                            relationshipIndex = 1;
+                                            tailentityIndex = 1;
+
+                                            document.getElementById("img_1").src = "assets/img/1/1.jpg"
+                                            document.getElementById("img_2").src = "assets/img/1/4.jpg"
+                                            document.getElementById("img_3").src = "assets/img/1/6.jpg"
+                                            document.getElementById("img_4").src = "assets/img/1/7.jpg"
+                                            document.getElementById("img_5").src = "assets/img/1/10.jpg"
+                                            document.getElementById("img_6").src = "assets/img/1/11.jpg"
+                                            document.getElementById("img_7").src = "assets/img/1/13.jpg"
+                                            document.getElementById("img_8").src = "assets/img/1/17.jpg"
+                                            document.getElementById("img_9").src = "assets/img/1/20.jpg"
+                                            document.getElementById("img_10").src = "assets/img/1/23.jpg"
+                                            document.getElementById("img_11").src = "assets/img/1/24.jpg"
+                                            document.getElementById("img_12").src = "assets/img/1/25.jpg"
+                                            document.getElementById("img_13").src = "assets/img/1/27.jpg"
+                                            document.getElementById("img_14").src = "assets/img/1/28.jpg"
+                                            document.getElementById("img_15").src = "assets/img/1/30.jpg"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+<table border="0" width="1000px" align="center">
+<tbody><tr>
+<td>
+
+<center>
+<h1>
+<font face="helvetica" style="font-size:87%">
+    Multi-Modal Knowledge Representation Learning
+<br>
+    via Webly-Supervised Relationships Mining
+</font>
+</h1>
+</center>
+
+<br>
+
+<h2><font face="helvetica" style="font-size:24px">Introduction</font></h2>
+<hr style="margin-top:-10px; margin-bottom:13px">
+<font face="helvetica" style="font-size:18px">
+<p align="justify">
+    Knowledge representation encodes enormous structured information with entities and relations into a continuous low-dimensional semantic space. Most conventional methods solely focus on learning knowledge representation
+    from single modality, yet neglects the complemental information from others. This paper proposes a novel multi-modal knowledge representation learning (MM-KRL) framework which is the frst attempt to handle knowledge from
+    both textural and visual modal web data. It consists of two stages, i.e., webly-supervised multi-modal relationship mining, and bienhanced cross-modal knowledge representation learning.
+</p>
+
+ <p>
+ <b>Compared with existing knowledge representation methods, our framework has several advantages:</b>
+</p>
+    <ol style="margin-top:-7px">
+    <li>It can eﬀectively mine multi-modal knowledge with structured textural and visual relationships from web automatically.</li>
+    <li>It is able to learn a common knowledge space which is independent to both task and modality by the proposed Bi-enhanced Cross-modal Deep Neural Network (BC-DNN).</li>
+    <li>It could represent unseen multi-modal relationships by transferring the learned knowledge with seen isolated entities and relations into unseen relationships. Experimental results show that the proposed MM-KRL
+systematic framework achieves superior performance both in zero-shot multi-modal retrieval and visual relationship recognition.</li>
+    </ol>
+
+</font>
+
+<p style="padding-bottom:1px"></p>
+
+
+<h2><font face="helvetica" style="font-size:24px">Motivation</font></h2>
+<hr style="margin-top:-10px; margin-bottom:13px">
+<font face="helvetica" style="font-size:15px">
+<!--   <h3>Task 1: HOI Classification</h3>
+<p style="padding-bottom: 10px" align="justify">
+The input is an image and the output is a set of binary labels, each representing the presence or absense of an HOI class.
+</p>
+<center>
+<div>
+<img src="./MultimodalKnowledge/pg_0013.jpg" height="200">
+<img src="./MultimodalKnowledge/pg_0006.jpg" height="200">
+<img src="./MultimodalKnowledge/pg_0011.jpg" height="200">
+<br>
+Sample annotations in the HICO benchmark
+<div>
+</div></div></center>      -->
+
+
+<h3>The difference with previous work:</h3>
+    <!--
+    <p style="padding-bottom: 10px" align="justify">
+The input is an image and the output is a set of bounding box pairs, each localizes a human plus an object and predicts an HOI class label.
+</p>
+    -->
+
+    <font face="helvetica" style="font-size:15px">
+<center>
+    <img src="./MultimodalKnowledge/comparison.png" height="300">
+    <br>Illustration the difference of conventional text KRL, visual KRL and the proposed MM-KRL.
+</center>
+</font>
+    <br>
+    <ol style="margin-top:-7px">
+        <li><b>text KRL</b>: text knowledge representation learning.</li>
+        <li><b>visual KRL</b>: visual knowledge representation learning.</li>
+        <li><b>MM-KRL</b>: multi-modal knowledge representation learning.</li>
+    </ol>
+
+<p style="padding-bottom:1px"></p>
+
+
+<h2><font face="helvetica" style="font-size:24px">Framework</font></h2>
+<hr style="margin-top:-10px; margin-bottom:13px">
+<font face="helvetica" style="font-size:15px">
+    <center>
+    <img src="./MultimodalKnowledge/framework.png" height="300">
+        Proposed framework for multi-modal knowledge learning
+        </center>
+</font>
+
+<p style="padding-bottom:1px"></p>
+
+
+
+<h2><font face="helvetica" style="font-size:24px">Dataset</font></h2>
+<hr style="margin-top:-10px; margin-bottom:13px">
+    <font face="helvetica" style="font-size:15px">
+    <center>
+        <form name="iForm_entity_1" method="post" action="">
+            Select entity 1:<br />
+            <input type="radio" name="entity_1" value="man" checked="checked" id="1_1"> man
+            <input type="radio" name="entity_1" value="boy" id="1_2"> boy
+            <input type="radio" name="entity_1" value="toilet" id="1_3"> toilet
+            <input type="radio" name="entity_1" value="flower" id="1_4"> flower
+        </form>
+        <br>
+        <form name="iForm_relation_type" method="post" action="">
+            Select relation type:<br />
+            <input type="radio" name="relation_type" value="rides" checked="checked" id="2_1"> rides
+            <input type="radio" name="relation_type" value="in" id="2_2"> in
+        </form>
+        <br>
+        <form name="iForm_entity_2" method="post" action="">
+            Select entity 2:<br />
+            <input type="radio" name="entity_2" value="bicycle" checked="checked" id="3_1"> bicycle
+            <input type="radio" name="entity_2" value="helmet" id="3_2"> helmet
+            <input type="radio" name="entity_2" value="grass" id="3_3"> grass
+            <input type="radio" name="entity_2" value="bathroom" id="3_4"> bathroom
+            <input type="radio" name="entity_2" value="wusuowei" id="3_5"> bottle
+        </form>
+
+        <br>
+        <form>
+            <input type="button" value="Show Images!" onclick="selectImages()">
+        </form>
+        <br>
+
+        <section id="container">
+            <ul id="stage">
+                <li data-tags="Print Design"><img src="assets/img/1/1.jpg" id="img_1" alt="Illustration" style="max-height: 96px; max-width:125px;"/></li>
+                <li data-tags="Print Design"><img src="assets/img/1/4.jpg" id="img_2" alt="Illustration" style="max-height: 96px; max-width:125px;"/></li>
+                <li data-tags="Print Design"><img src="assets/img/1/6.jpg" id="img_3" alt="Illustration" style="max-height: 96px; max-width:125px;"/></li>
+                <li data-tags="Print Design"><img src="assets/img/1/7.jpg" id="img_4" alt="Illustration" style="max-height: 96px; max-width:125px;"/></li>
+                <li data-tags="Print Design"><img src="assets/img/1/10.jpg" id="img_5" alt="Illustration" style="max-height: 96px; max-width:125px;"/></li>
+                <li data-tags="Print Design"><img src="assets/img/1/11.jpg" id="img_6" alt="Illustration" style="max-height: 96px; max-width:125px;"/></li>
+                <li data-tags="Print Design"><img src="assets/img/1/13.jpg" id="img_7" alt="Illustration" style="max-height: 96px; max-width:125px;"/></li>
+                <li data-tags="Print Design"><img src="assets/img/1/17.jpg" id="img_8" alt="Illustration" style="max-height: 96px; max-width:125px;"/></li>
+                <li data-tags="Print Design"><img src="assets/img/1/20.jpg" id="img_9" alt="Illustration" style="max-height: 96px; max-width:125px;"/></li>
+                <li data-tags="Print Design"><img src="assets/img/1/23.jpg" id="img_10" alt="Illustration" style="max-height: 96px; max-width:125px;"/></li>
+                <li data-tags="Print Design"><img src="assets/img/1/24.jpg" id="img_11" alt="Illustration" style="max-height: 96px; max-width:125px;"/></li>
+                <li data-tags="Print Design"><img src="assets/img/1/25.jpg" id="img_12" alt="Illustration" style="max-height: 96px; max-width:125px;"/></li>
+                <li data-tags="Print Design"><img src="assets/img/1/27.jpg" id="img_13" alt="Illustration" style="max-height: 96px; max-width:125px;"/></li>
+                <li data-tags="Print Design"><img src="assets/img/1/28.jpg" id="img_14" alt="Illustration" style="max-height: 96px; max-width:125px;"/></li>
+                <li data-tags="Print Design"><img src="assets/img/1/30.jpg" id="img_15" alt="Illustration" style="max-height: 96px; max-width:125px;"/></li>
+            </ul>
+        </section>
+
+        <!-----  <img src="./MultimodalKnowledge/dataset.png" height="300">
+        <br>Illustration for a part of the constructed multimodal relationship dataset.
+        <br>  ----->
+
+
+
+    </center>
+    </font>
+
+<font face="helvetica" style="font-size:15px">
+
+<div>
+<a href="http://napoli18.eecs.umich.edu/public_html/data/hico_20150920.tar.gz" style="text-decoration: none;">
+<img src="./MultimodalKnowledge/download_button.jpg" height="30px">
+</a>
+<div style="margin-left: 10px; display: inline-block;">
+<a href="http://napoli18.eecs.umich.edu/public_html/data/hico_20150920.tar.gz">Training data</a> 7.5GB<br>
+Images and annotations for the HOI classification task.
+</div>
+</div>
+
+<br>
+
+<div>
+<a href="http://napoli18.eecs.umich.edu/public_html/data/hico_20160224_det.tar.gz" style="text-decoration: none;">
+<img src="./MultimodalKnowledge/download_button.jpg" height="30px">
+</a>
+<div style="margin-left: 10px; display: inline-block;"> 
+<a href="http://napoli18.eecs.umich.edu/public_html/data/hico_20160224_det.tar.gz">Test data</a> 7.5GB<br>
+Images and annotations for the HOI detection task.
+</div>
+</div>
+
+<div>
+<ul style="padding-left: 16px">
+<li><a href="./MultimodalKnowledge/alltextualrelationships.txt">list of all relationships</a></li>
+    <!-- <li><a href="http://napoli18.eecs.umich.edu/public_html/data/hico_list_vb.txt">list of verbs</a></li>
+<li><a href="http://napoli18.eecs.umich.edu/public_html/data/hico_list_obj.txt">list of objects</a></li> -->
+
+</ul>
+</div>
+
+    <br>
+    <table border="1" align="center">
+        <tr>
+            <th align="center" bgcolor=#F0F0F0>&nbsp;#Images&nbsp;</th>
+            <th align="center" bgcolor=#F0F0F0>&nbsp;#Multi-modal relationship types&nbsp;<br></th>
+            <th align="center" bgcolor=#F0F0F0>&nbsp;#Multi-modal relationship instances&nbsp;<br></th>
+
+        </tr>
+        <tr>
+            <td align="center">&nbsp;687784</td>
+            <td align="center">&nbsp;20726</td>
+            <td align="center">&nbsp;687784</td>
+
+        </tr>
+    </table>  		<br>
+<!--<div style="margin-top: 20px">
+<p><b>Note:</b>
+</p><ol style="margin-top:-10px">
+<li>HICO and HICO-DET share the same set of HOI categories.</li>
+<li>HICO-DET is a superset of HICO in terms of the image set.</li>
+</ol>
+<p></p>
+</div>-->
+
+
+
+</font>
+
+<p style="padding-bottom:1px"></p>
+
+
+<h2><font face="helvetica" style="font-size:24px">Source Code</font></h2>
+<hr style="margin-top:-10px; margin-bottom:13px">
+<font face="helvetica" style="font-size:15px">
+
+<div>
+<img src="./MultimodalKnowledge/GitHub-Mark-64px.png" height="30px">
+<div style="margin-left: 10px; display: inline-block;"> 
+<a href="./MultimodalKnowledge/code/tripletRelationship.py">tripletRelationship.py</a>
+    <br>
+Source code for textual knowledge representation learning based on Triplet Relationship strategy.
+</div>
+</div>
+
+<br>
+
+    <div>
+        <img src="./MultimodalKnowledge/GitHub-Mark-64px.png" height="30px">
+        <div style="margin-left: 10px; display: inline-block;">
+            <a href="./MultimodalKnowledge/code/caffe-multilabel.zip">caffe-multilabel.zip</a> &nbsp;&nbsp; <a href="./MultimodalKnowledge/code/solver.prototxt">solver.prototxt</a>
+            &nbsp;&nbsp; <a href="./MultimodalKnowledge/code/train_val.prototxt">train_val.prototxt</a>
+            <br>
+            Source code for visual knowledge representation learning based on deep multivariate regression strategy.
+            <br>
+            caffe-multilabel.zip: Modify the Caffe code to make it support deep multivariate regression which only need one LMDB file.
+            <br>
+            solver.prototxt & train_val.prototxt : parameters on visual knowledge representation learning stage.
+        </div>
+    </div>
+
+    <br>
+
+    <div>
+        <img src="./MultimodalKnowledge/GitHub-Mark-64px.png" height="30px">
+        <div style="margin-left: 10px; display: inline-block;">
+            <a href="./MultimodalKnowledge/code/Training Log Files.zip">Training Log Files</a>
+            <br>
+            Training log files (iteration and training loss) in multi-modal knowledge representation learning strategy.
+        </div>
+    </div>
+
+</font>
+
+<p style="padding-bottom:1px"></p>
+
+
+<h2><font face="helvetica" style="font-size:24px">Results</font></h2>
+<hr style="margin-top:-10px; margin-bottom:-5px">
+    <br>
+    <div>
+        <a href="./MultimodalKnowledge/test_text_result.zip" style="text-decoration: none;">
+            <img src="./MultimodalKnowledge/download_button.jpg" height="30px">
+        </a>
+        <div style="margin-left: 10px; display: inline-block;">
+            <a href="./MultimodalKnowledge/test_text_result.zip">Text-Text Retrieval</a> 910 KB<br>
+            Images and annotations for the HOI detection task.
+        </div>
+    </div>
+
+    <br>
+    <div>
+        <a href="./MultimodalKnowledge/test_visual_result.zip" style="text-decoration: none;">
+            <img src="./MultimodalKnowledge/download_button.jpg" height="30px">
+        </a>
+        <div style="margin-left: 10px; display: inline-block;">
+            <a href="./MultimodalKnowledge/test_visual_result.zip">Image-Image Retrieval</a> 3.10 MB<br>
+            Images and annotations for the HOI detection task.
+        </div>
+    </div>
+
+    <br>
+    <div>
+        <a href="./MultimodalKnowledge/test_crossmodalresult.zip" style="text-decoration: none;">
+            <img src="./MultimodalKnowledge/download_button.jpg" height="30px">
+        </a>
+        <div style="margin-left: 10px; display: inline-block;">
+            <a href="./MultimodalKnowledge/test_crossmodalresult.zip">Text-Image Retrieval</a> 2.93 MB<br>
+            Images and annotations for the HOI detection task.
+        </div>
+    </div>
+<p style="padding-bottom:1px"></p>
+
+<hr>
+<font face="helvetica" style="font-size:15px">Last updated on 2017/03/05</font>
+</td>
+</tr>
+
+
+
+</tbody></table></body></html>
